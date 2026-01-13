@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Inter } from "next/font/google";
 import "./globals.css";
+import GlobalCrackEffect from "@/components/GlobalCrackEffect";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -14,7 +15,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Seattle Auto Glass LLC | Premium Windshield Repair & Replacement",
-  description: "Expert windshield repair and replacement in Seattle. Mobile service, insurance approved, lifetime guarantee. Call (425) 399-3393 for a free quote.",
+  description:
+    "Expert windshield repair and replacement in Seattle. Mobile service, insurance approved, lifetime guarantee. Call (425) 399-3393 for a free quote.",
 };
 
 export default function RootLayout({
@@ -27,6 +29,7 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${inter.variable} font-sans antialiased`}
       >
+        <GlobalCrackEffect />
         {children}
       </body>
     </html>
