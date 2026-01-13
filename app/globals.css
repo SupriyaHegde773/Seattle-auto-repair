@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-surface: rgba(255, 255, 255, 0.7);
+  --glass-highlight: rgba(255, 255, 255, 0.8);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  --primary-gradient: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-manrope), sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/60 backdrop-blur-xl border border-white/40;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  }
+
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-lg border border-white/40 shadow-lg transition-all duration-300 hover:bg-white/60 hover:border-white/60 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .glass-button {
+    @apply bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-400 hover:to-cyan-300 text-white shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 active:scale-95;
+  }
+
+  .emergency-glass {
+    @apply bg-red-500/90 backdrop-blur-md border border-red-400 shadow-lg text-white;
+    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.3);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500;
+  }
+}
+
+@keyframes loading {
+  0% {
+    width: 0%;
+    margin-left: 0;
+  }
+  50% {
+    width: 100%;
+    margin-left: 0;
+  }
+  100% {
+    width: 0%;
+    margin-left: 100%;
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
