@@ -32,8 +32,8 @@ export default function Home() {
       <GlassHeader />
       <EmergencyAlert />
 
-      {/* Main Scroll Section */}
-      <section ref={containerRef} className="h-[500vh] relative z-0">
+      {/* Main Scroll Section - Black background localized to here */}
+      <section ref={containerRef} className="h-[500vh] relative z-0 bg-black">
         <div className="sticky top-[80px] h-[calc(100vh-80px)] w-full overflow-hidden">
           <div className="absolute inset-0 z-0">
             <GlassScrollCanvas
